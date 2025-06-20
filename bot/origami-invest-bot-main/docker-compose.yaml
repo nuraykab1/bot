@@ -1,0 +1,11 @@
+volumes:
+  sqlite_data:
+
+services:
+  bot:
+    image: strkv/origami_bot
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - sqlite_data:/usr/src/bot/database
